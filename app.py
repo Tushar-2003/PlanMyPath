@@ -9,7 +9,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.secret_key = 'secret_key'
 app.config['SQLALCHEMY_BINDS'] = {
-    'roadmaps': 'sqlite:///roadmaps.db'
+    'roadmaps': 'sqlite:///roadmaps.db',
+    'path': 'sqlite:///path.db'
 }
 db = SQLAlchemy(app)
 
@@ -32,13 +33,20 @@ class Roadmap(db.Model):
     __bind_key__ = 'roadmaps'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
-    description = db.Column(db.String(120), nullable=False)
-    image = db.Column(db.LargeBinary, nullable=False)
+    desc = db.Column(db.String(120), nullable=False)
+    # image = db.Column(db.LargeBinary, nullable=False)
 
     def __repr__(self):
         return '<Roadmap %r>' % self.name
 
+class Path(db.Model):
+    __bind_key__ = 'path'
+    id =db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(80), nullable=False)
+    description = db.Column(db.Text, nullable=True)
 
+    def __repr__(self):
+        return f'<Path {self.id}: {self.title}>'
 
 @app.route("/")
 def index():
@@ -84,6 +92,18 @@ def signup():
     
     return render_template('signup.html')
 
+@app.route('/create',methods=['POST', 'GET'])
+def create():
+    if request.method == 'POST':
+        name = request.form['title']
+        desc = request.form['desc']
+        roadmap = Roadmap(name=name, desc=desc)
+        db.session.add(roadmap)
+        db.session.commit()
+        return r
+        
+
+    return render_template('create.html')
 
 
 

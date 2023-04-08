@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="wrapperHeading">
+          CREATE ROADMAPS
+        </h2>
+        <div class="login-form">
+          <form method ="POST" enctype="multipart/form-data" >
+            <div class="login-form-email">
+              <!-- <span class="form-icon"></span> -->
+              <label for="name">Enter Roadmap Title</label>
+              <input type="text" name="name" id="name" >
+              
+            </div>
+            <div class="login-form-email">
+                <!-- <span class="form-icon"></span> -->
+                <label for="desc">Enter Roadmap Desc</label>
+                <input type="text" name="desc" id="desc">
+                
+              </div>
+              <!--<div class="login-form-email">
+                <!-- <span class="form-icon"></span> #this line should be commented out
+                <label for="text">Enter Roadmap image</label>
+                <input type="file">-->
+                
+              </div>
+
+              <div class="login-form-email">
+                <!-- <span class="form-icon"></span> -->
+                <button class="Explore">
+                    Continue
+                </button>
+                
+              </div>
+              
+            </div>
+            
+          </form>
+        </div>
+</body>
+</html>
