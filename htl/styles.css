@@ -376,22 +376,37 @@ nav {
     flex-direction: column;
   }
 
-  .login-form-email button{
+   .create-roadmap-button{
     width: 90%;
     background-color: #238636;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid black;
     cursor: pointer;
+    /* pointer-events: none; */
+    /* text-decoration: none; */
   }
 
-  .login-form-email button:hover{
+  .create-roadmap-button a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .create-roadmap-button:hover{
     background-color: #fff;
     color: #238636;
   }
   
+
+  .create-roadmap-button:hover a{
+    /* background-color: #fff; */
+    color: #238636;
+  }
   
   
-   
+   .continue{
+    display: grid;
+    justify-content: center;
+    margin-top: 10%;
 
-
+  }
+  
