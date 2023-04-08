@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+<body>
+
+    <nav>
+        <div class="logo-container">
+          <a href="{{ url_for('index') }}"> PlanMyPath</a>
+        </div>
+        <div class="links-container">
+          <ul>
+            <li><a href="{{ url_for('index') }}">HOME</a></li>
+            <li><a href="explore.html"></a> ROADMAPS</a></li>
+            <!-- <li><a href="create.html">CREATE ROADMAPS</a></li> -->
+            <!-- <li><a href="#">Contact</a></li> -->
+          </ul>
+        </div>
+        <div class="button-container">
+          <a href="{{ url_for('login') }}" class="button">Sign In</a>
+        </div>
+      </nav>
+
+
+    <div class="wrapper">
+        <h2 class="wrapperHeading">
+          Login
+        </h2>
+        <div class="login-form">
+          <form action="">
+            <div class="login-form-email"id="form2">
+              <!-- <span class="form-icon"></span> -->
+              <label for="email">email</label>
+              <input type="email">
+              
+            </div>
+            <div class="login-form-email" id="form1">
+              <!-- <span class="form-icon"></span> -->
+              
+              <label for="password">password</label>
+              <input type="password">
+
+              <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+
+            </div>
+            <!-- <div class="login-form-email" >
+              
+              <input type="checkbox">
+              <label for="checkbox" >rememebr me</label>
+              <span class="forgot"><a href="" >forgot password?</a></span>
+              
+            </div> -->
+            <div class="login-form-email">
+              <button class="form-btn">LOGIN</button>
+              
+            </div>
+            
+           
+              
+            </div>
+            <div class="close">
+                <a href="{{ url_for('index') }}"><span class="close1">X</span></a>
+            </div>
+            
+          </form>
+      
+</body>
+</html>
