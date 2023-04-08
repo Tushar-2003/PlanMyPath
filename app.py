@@ -7,7 +7,12 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
+app.secret_key = 'secret_key'
+app.config['SQLALCHEMY_BINDS'] = {
+    'roadmaps': 'sqlite:///roadmaps.db'
+}
 db = SQLAlchemy(app)
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -23,13 +28,35 @@ class User(db.Model):
         return '<User %r>' % self.name
 
 
+class Roadmap(db.Model):
+    __bind_key__ = 'roadmaps'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    description = db.Column(db.String(120), nullable=False)
+    image = db.Column(db.LargeBinary, nullable=False)
+
+    def __repr__(self):
+        return '<Roadmap %r>' % self.name
+
+
 
 @app.route("/")
 def index():
     return render_template('index.html')
 
-@app.route('/login')
+@app.route('/login', )
 def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        
+        # Check if the user exists in the database
+        user = User.query.filter_by(email=email, password=password).first()
+        if user:
+            return redirect('/')
+        else:
+            return redirect(url_for('login'))
+        
     return render_template('login.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -56,8 +83,6 @@ def signup():
         return redirect(url_for('login'))
     
     return render_template('signup.html')
-
-
 
 
 
