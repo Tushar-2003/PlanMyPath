@@ -95,12 +95,15 @@ def signup():
 @app.route('/create',methods=['POST', 'GET'])
 def create():
     if request.method == 'POST':
-        name = request.form['title']
+        name = request.form['name']
         desc = request.form['desc']
+        
         roadmap = Roadmap(name=name, desc=desc)
+        
         db.session.add(roadmap)
         db.session.commit()
-        return r
+        
+        return redirect(url_for('index'))
         
 
     return render_template('create.html')
