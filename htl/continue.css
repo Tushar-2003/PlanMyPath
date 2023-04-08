@@ -13,11 +13,13 @@ ul{
  
   
   .grid-container {
-          display: grid;
-          grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
-          grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
-          gap: 10px; /* Gap between grid items */
-          padding: 10px; /* Padding for grid container */
+    justify-content: center;
+          display: flex;
+          flex-direction: column;
+          /* grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
+          /* grid-template-columns: repeat(3, 1fr); 3 columns with equal width */
+          /* gap: 10px; Gap between grid items */
+          padding: 10px; 
           border: 1px solid black; /* Border around grid container */
     width:50%;
     border:none;
@@ -35,6 +37,10 @@ ul{
           background-color: lightgray; /* Background color for boxes */
           padding: 10px; /* Padding for boxes */
           text-align: center; /* Center text in boxes */
+          
+            margin-top: 10px;
+            width: 100%;
+         
         }
 
         .inputHeading{
@@ -175,7 +181,15 @@ ul{
             justify-self: center; /* center the button horizontally */
             padding: 10px;
             width: 100%;
-            height: 60%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
           }
           
 
+          .flexMain{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
