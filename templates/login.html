@@ -32,20 +32,18 @@
           Login
         </h2>
         <div class="login-form">
-          <form action="">
+          <form method ="POST" enctype="multipart/form-data">
             <div class="login-form-email"id="form2">
               <!-- <span class="form-icon"></span> -->
               <label for="email">email</label>
-              <input type="email">
+              <input type="email" name="email" id ="email">
               
             </div>
             <div class="login-form-email" id="form1">
               <!-- <span class="form-icon"></span> -->
               
               <label for="password">password</label>
-              <input type="password">
-
-              <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+              <input type="password" id="password" name="password">
 
             </div>
             <!-- <div class="login-form-email" >
@@ -56,8 +54,14 @@
               
             </div> -->
             <div class="login-form-email">
-              <button class="form-btn">LOGIN</button>
+              <input type="submit" class="form-btn" value="LOGIN" >
               
+            </div>
+            <br>
+            <div class="wrapperHeading">
+              <a href="{{ url_for('signup') }}">
+              New User?
+              </a>
             </div>
             
            
