@@ -11,18 +11,18 @@
 
     <nav>
         <div class="logo-container">
-          <a href="#"> PlanMyPath</a>
+          <a href="{{ url_for('index') }}"> PlanMyPath</a>
         </div>
         <div class="links-container">
           <ul>
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="{{ url_for('index') }}">HOME</a></li>
             <li><a href="explore.html"></a> ROADMAPS</a></li>
             <!-- <li><a href="create.html">CREATE ROADMAPS</a></li> -->
             <!-- <li><a href="#">Contact</a></li> -->
           </ul>
         </div>
         <div class="button-container">
-          <a href="#" class="button">Sign In</a>
+          <a href="{{ url_for('login') }}" class="button">Sign In</a>
         </div>
       </nav>
 
@@ -61,7 +61,7 @@
               
             </div>
             <div class="close">
-                <a href="index.html"><span class="close1">X</span></a>
+                <a href="{{ url_for('index') }}"><span class="close1">X</span></a>
             </div>
             
           </form>
