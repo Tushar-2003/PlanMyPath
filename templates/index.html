@@ -33,7 +33,10 @@
         </div><!--v-->
         <div class="create-login-button"><!--create-explore-button-->
           <div class="create-login-button1"><a href="explore.html"><button class="Explore">Create Roadmaps</button></a></div><!--create-explore-button1-->
-        <div class="create-login-button2"><a href="login.html"><button class="sign-in" id="sign-in"> Sign In</button></a></div>
+        <div class="create-login-button2">
+            <form action="{{ url_for('login') }}">
+                <button type="submit" id="sign-in">Sign In</button>
+            </form></div>
         </div><!--create-explore-button2-->
         
       </div>
@@ -41,14 +44,6 @@
 
       
 
-
-
-
-<script>
-    document.getElementById("sign-in").onclick = function() {
-        window.location.href = "{{ url_for('login') }}";
-    }
-</script>
   
 
 <script src="{{url_for('static', filename='/js/index.js')}}"></script>
