@@ -6,7 +6,7 @@
 }
 body{
     /* background-color: rgb(39, 39, 42); */
-    background-color: #0d1117;
+    background-color: #272727;
     /* opacity: 0.5; */
     display: flex;
     flex-wrap: wrap;
@@ -131,7 +131,7 @@ nav {
     }
   }
   .create-login{
-    background-color: #0d1117;
+    background-color: #161b22;
        display: flex;
        flex-direction: column;
    /*     flex-wrap: wrap; */
@@ -140,6 +140,10 @@ nav {
        /* justify-content: center; */
        height: 100%;
        width: 600px;
+       border-radius: 40px;
+       -webkit-box-shadow: 10px 10px 65px 2px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 65px 2px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 65px 2px rgba(0,0,0,0.75);
    /*     width: fit-content; */
    
    }
@@ -172,8 +176,9 @@ nav {
      width: 160px;
      border-radius: 10px;
      cursor: pointer;
-     background-color: #0471ba;
+     background-color: #14a76c;
      color: #fff;
+     font-size: 1rem;
      /* padding: 15px; */
    }
    
