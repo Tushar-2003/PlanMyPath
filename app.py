@@ -8,10 +8,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.secret_key = 'secret_key'
-app.config['SQLALCHEMY_BINDS'] = {
-    'roadmaps': 'sqlite:///roadmaps.db',
-    'path': 'sqlite:///path.db'
-}
+# app.config['SQLALCHEMY_BINDS'] = {
+#     'roadmap': 'sqlite:///roadmaps.db',
+#     'path': 'sqlite:///path.db'
+# }
+UPLOAD_FOLDER = 'roadmaps'
 db = SQLAlchemy(app)
 
 
@@ -30,29 +31,34 @@ class User(db.Model):
 
 
 class Roadmap(db.Model):
-    __bind_key__ = 'roadmaps'
+    # __bind_key__ = 'roadmap'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     desc = db.Column(db.String(120), nullable=False)
-    # image = db.Column(db.LargeBinary, nullable=False)
+    paths = db.relationship('Path', backref='roadmap', lazy=True)
 
     def __repr__(self):
-        return '<Roadmap %r>' % self.name
+        return f"Roadmap('{self.name}', '{self.desc}')"
+
 
 class Path(db.Model):
-    __bind_key__ = 'path'
-    id =db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80), nullable=False)
-    description = db.Column(db.Text, nullable=True)
+    # __bind_key__ = 'path'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    desc = db.Column(db.Text, nullable=True)
+    photo = db.Column(db.String(100), nullable=True)
+    video = db.Column(db.String(100), nullable=True)
+    roadmap_id = db.Column(db.Integer, db.ForeignKey('roadmap.id'), nullable=False)
+
 
     def __repr__(self):
-        return f'<Path {self.id}: {self.title}>'
+        return f"Path('{self.title}', '{self.desc}', '{self.link}', '{self.photo}')"
 
 @app.route("/")
 def index():
     return render_template('index.html')
 
-@app.route('/login', )
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form['email']
@@ -61,7 +67,7 @@ def login():
         # Check if the user exists in the database
         user = User.query.filter_by(email=email, password=password).first()
         if user:
-            return redirect('/')
+            return redirect(url_for('create'))
         else:
             return redirect(url_for('login'))
         
@@ -99,20 +105,63 @@ def create():
         desc = request.form['desc']
         
         roadmap = Roadmap(name=name, desc=desc)
-        
         db.session.add(roadmap)
         db.session.commit()
         
-        return redirect(url_for('index'))
-        
+         # create directory for path_{roadmap.id}
+        path_dir = f'path_{roadmap.id}'
+        os.mkdir(path_dir)
 
+        # create new path
+        title = f"Path {roadmap.id}"
+        desc = "Description for Path"
+        video = "http://example.com"
+        photo = "path.png"
+        path = Path(title=title, desc=desc, video=video, photo=photo, roadmap_id=roadmap.id)
+
+        db.session.add(path)
+        db.session.commit()
+  
+        
+        # create directory for path_{roadmap.id}
+        
+        return redirect(url_for('continue_'))
+        
     return render_template('create.html')
 
+@app.route('/continue')
+def continue_():
+    return render_template('continue.html')
 
 
 
 
 
+# @app.route('/create_path/<int:roadmap_id>', methods=['GET', 'POST'])
+# def create_path(roadmap_id):
+#     roadmap = Roadmap.query.get_or_404(roadmap_id)
+#     if request.method == 'POST':
+#         title = request.form['title']
+#         desc = request.form['desc']
+#         photo = request.files['photo']
+#         video = request.form['video']
+
+#         path = Path(title=title, desc=desc, photo=photo, video=video, roadmap_id=roadmap_id)
+#         db.session.add(path)
+#         db.session.commit()
+
+#         # create a new database for the current roadmap
+#         engine = create_engine('sqlite:///roadmaps/path_{}.db'.format(roadmap_id))
+#         Base.metadata.create_all(bind=engine)
+
+#         return redirect(url_for('continue', roadmap_id=roadmap_id))
+
+#     return render_template('create_path.html', roadmap=roadmap)
+
+
+
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__" :
     app.run(debug=True)
