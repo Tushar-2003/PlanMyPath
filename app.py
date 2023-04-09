@@ -137,26 +137,7 @@ def continue_():
 
 
 
-# @app.route('/create_path/<int:roadmap_id>', methods=['GET', 'POST'])
-# def create_path(roadmap_id):
-#     roadmap = Roadmap.query.get_or_404(roadmap_id)
-#     if request.method == 'POST':
-#         title = request.form['title']
-#         desc = request.form['desc']
-#         photo = request.files['photo']
-#         video = request.form['video']
 
-#         path = Path(title=title, desc=desc, photo=photo, video=video, roadmap_id=roadmap_id)
-#         db.session.add(path)
-#         db.session.commit()
-
-#         # create a new database for the current roadmap
-#         engine = create_engine('sqlite:///roadmaps/path_{}.db'.format(roadmap_id))
-#         Base.metadata.create_all(bind=engine)
-
-#         return redirect(url_for('continue', roadmap_id=roadmap_id))
-
-#     return render_template('create_path.html', roadmap=roadmap)
 
 
 
