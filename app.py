@@ -109,6 +109,7 @@ def create():
         db.session.commit()
         
          # create directory for path_{roadmap.id}
+        global path_dir 
         path_dir = f'path_{roadmap.id}'
         os.mkdir(path_dir)
 
@@ -117,22 +118,42 @@ def create():
         desc = "Description for Path"
         video = "http://example.com"
         photo = "path.png"
+        global path
         path = Path(title=title, desc=desc, video=video, photo=photo, roadmap_id=roadmap.id)
 
         db.session.add(path)
         db.session.commit()
-  
         
-        # create directory for path_{roadmap.id}
         
-        return redirect(url_for('continue_'))
+        
+        return redirect(url_for('create_path', roadmap_id=roadmap.id))
         
     return render_template('create.html')
 
-@app.route('/continue')
-def continue_():
-    return render_template('continue.html')
+@app.route('/create_path/<int:roadmap_id>', methods=['POST', 'GET'])
+def create_path(roadmap_id):
+    roadmap = Roadmap.query.get(roadmap_id)
 
+    if request.method == 'POST':
+        title = request.form['title']
+        desc = request.form['desc']
+        photo = request.files['photo']
+        video = request.form['video']
+        
+        # Save photo to disk and get the file path
+        photo_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(photo.filename))
+        photo.save(photo_path)
+
+        # Create a new path instance and add it to the roadmap
+        path = Path(title=title, desc=desc, photo=photo_path, video=video, roadmap_id=roadmap_id)
+        roadmap.paths.append(path)
+        
+        db.session.add(path)
+        db.session.commit()
+
+        return redirect(url_for('create_path', roadmap_id=roadmap_id))
+
+    return render_template('create_path.html', roadmap=roadmap)
 
 
 
