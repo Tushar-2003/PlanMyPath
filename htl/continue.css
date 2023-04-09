@@ -1,178 +1,1579 @@
+
 /* body{
     display:flex;
     flex-wrap:wrap ;
 } */
 
+*{
+  margin: 0;
+}
 
-ul{
-  list-style-type: circle;
-  /* list-style-size: 20px; */
-  
+body{
+  background-color: #161b22;
 }
 
 
-.grid-container {
-        display: grid;
-        grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
-        grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
-        gap: 10px; /* Gap between grid items */
-        padding: 10px; /* Padding for grid container */
-        border: 1px solid black; /* Border around grid container */
-  width:50%;
-  border:none;
-/*   font-size:50px; */
-      }
-      
-      .header {
-        grid-row: 1 / 2; /* Header spans first row */
-        grid-column: 1 / -1; /* Header spans all columns */
-        background-color: lightblue; /* Background color for header */
-        padding: 10px; /* Padding for header */
-      }
-      
-      .box {
-        background-color: lightgray; /* Background color for boxes */
-        padding: 10px; /* Padding for boxes */
-        text-align: center; /* Center text in boxes */
-      }
-
-      .inputHeading{
-          width:80%;border: none;background:inherit;padding:20px;font-size:2rem;
-      }
-
-      .inputVideo{
-          width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
-      }
-
-      .inputDesc{
-          width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
-      }
-      .inputFile{
-          width:80%;border: none;background:inherit;padding:7px;font-size:0.8rem;
-      }
-      nav {
-          /* position: fixed; */
-          width: 100%;
+ul{
+    list-style-type: circle;
+    /* list-style-size: 20px; */
+    
+  }
+ li::marker{
+  color: #fff;
+ }
+  
+  .grid-container {
+    background-color:#272727 ;
+    justify-content: center;
           display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem;
-          background-color: #fff;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-          /* opacity: 0.7; */
-          font-family: 'Times New Roman', Times, serif;
-          font-weight: 500;
-          box-sizing: border-box ;
+          flex-direction: column;
+          /* grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
+          /* grid-template-columns: repeat(3, 1fr); 3 columns with equal width */
+          /* gap: 10px; Gap between grid items */
+          padding: 10px; 
+          border: 1px solid black; /* Border around grid container */
+    width:50%;
+    border-radius: 20px;
+    /* border:none; */
+  /*   font-size:50px; */
         }
         
-        .logo-container  {
-          width: 150px;
+        .header {
+          grid-row: 1 / 2; /* Header spans first row */
+          grid-column: 1 / -1; /* Header spans all columns */
+          background-color: #14a76c;
+          opacity:0.7;
+          /* Background color for header */
+          padding: 10px; /* Padding for header */
+          border-radius: 20px;
         }
-        .logo-container a{
-          font-size: 1.5em;
-          color: #170000;
-          font-weight: 500;
-          text-decoration: none;
-          display: inline-block;
-        }
-      
+
         
-        .logo-container img {
-          max-width: 100%;
-        }
-        
-        .links-container ul {
-          display: flex;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-        
-        .links-container li {
-          margin: 0 1rem;
-        }
-        
-        .links-container a {
-          display: inline-block;
-          position: relative;
-          color: #333;
-          text-decoration: none;
-          font-size: 1.2rem;
-        }
-      
-        a::after{
-          content: '';
-          position: absolute;
-          width: 100%;
-          transform: scaleX(0);
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: #010a0f;
-          transform-origin: bottom right;
-          transition: transform 0.5s ease-out;
-          /* margin-top: 6px; */
-        }
-         a:hover::after{
-          transform: scaleX(1);
-          transform-origin: bottom left;
-        }
-        
-        .button-container a {
-          display: inline-block;
-          padding: 0.5rem 1rem;
-          background-color: #333;
-          color: #fff;
-          text-decoration: none;
-          border-radius: 5px;
-          transition: all 0.3s ease;
-          /* translate: scaleX(0); */
-        }
-        
-        .button-container a:hover {
-          background-color: #ffffff;
-          color: #27272a;
-          border: 2px solid black;
-        }
-      
-        .create-login-button2 a{
-          color: #fff;
-          text-decoration: none;
-        }
-      
+        .box {
+          background-color: lightgray; /* Background color for boxes */
+          padding: 10px; /* Padding for boxes */
+          text-align: center; /* Center text in boxes */
+          border-radius: 20px;
+          
+            margin-top: 10px;
+            width: 100%;
          
-        @media only screen and (max-width: 768px) {
-          .logo-container {
-            width: 100px;
-          }
-        
-          .links-container {
-            display: none;
-          }
-        
-          .button-container {
-            margin-left: auto;
-          }
         }
-        
-        @media only screen and (max-width: 480px) {
-          .logo-container {
-            width: 80px;
+
+        .inputHeading{
+            width:80%;border: none;background:inherit;padding:20px;font-size:2rem;
+        }
+
+        .inputVideo{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+
+        .inputDesc{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+        .inputFile{
+            width:80%;border: none;background:inherit;padding:7px;font-size:0.8rem;
+        }
+        nav {
+            /* position: fixed; */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* opacity: 0.7; */
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            box-sizing: border-box ;
+          }
+          
+          .logo-container  {
+            width: 150px;
+          }
+          .logo-container a{
+            font-size: 1.5em;
+            color: #170000;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
           }
         
+          
+          .logo-container img {
+            max-width: 100%;
+          }
+          
+          .links-container ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          
+          .links-container li {
+            margin: 0 1rem;
+          }
+          
+          .links-container a {
+            display: inline-block;
+            position: relative;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+          }
+        
+          a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #010a0f;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+            /* margin-top: 6px; */
+          }
+           a:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+          
           .button-container a {
-            padding: 0.3rem 0.6rem;
-            font-size: 0.8rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            /* translate: scaleX(0); */
           }
-        }
-      
+          
+          .button-container a:hover {
+            background-color: #ffffff;
+            color: #27272a;
+            border: 2px solid black;
+          }
+        
+          .create-login-button2 a{
+            color: #fff;
+            text-decoration: none;
+          }
+        
+           
+          @media only screen and (max-width: 768px) {
+            .logo-container {
+              width: 100px;
+            }
+          
+            .links-container {
+              display: none;
+            }
+          
+            .button-container {
+              margin-left: auto;
+            }
+          }
+          
+          @media only screen and (max-width: 480px) {
+            .logo-container {
+              width: 80px;
+            }
+          
+            .button-container a {
+              padding: 0.3rem 0.6rem;
+              font-size: 0.8rem;
+            }
+          }
+        
 
 
-        .saveButton {
-          grid-row: 3 / 4; /* save button spans the last row */
-          grid-column: 2 / 3; /* save button spans the second column */
-          justify-self: center; /* center the button horizontally */
-          padding: 10px;
-          width: 100%;
-          height: 60%;
+          .saveButton {
+            grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+          
+
+          .flexMain{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+li {
+  /* You need to turn on relative positioning so the line is placed relative to the item rather than absolutely on the page */
+  position: relative;
+
+  /* Use padding to space things out rather than margins as the line would get broken up otherwise */
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+li .grid-container .header:before {
+  background-color: #fff;
+  width: 2px;
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -13px;
+}
+li .grid-container .header::after {
+  content: '';
+  position: absolute;
+/*   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E"); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+}
+.submitButton{
+  
+grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+  margin-left:100px;
+  width:40%;
+  background:#14a76c;
+          }
+
+.submitButton:hover{
+  background:#fff;
+  color:#14a76c;
+}
+/* body{
+    display:flex;
+    flex-wrap:wrap ;
+} */
+
+*{
+  margin: 0;
+}
+
+body{
+  background-color: #161b22;
+}
+
+
+ul{
+    list-style-type: circle;
+    /* list-style-size: 20px; */
+    
+  }
+ li::marker{
+  color: #fff;
+ }
+  
+  .grid-container {
+    background-color:#272727 ;
+    justify-content: center;
+          display: flex;
+          flex-direction: column;
+          /* grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
+          /* grid-template-columns: repeat(3, 1fr); 3 columns with equal width */
+          /* gap: 10px; Gap between grid items */
+          padding: 10px; 
+          border: 1px solid black; /* Border around grid container */
+    width:50%;
+    border-radius: 20px;
+    /* border:none; */
+  /*   font-size:50px; */
         }
+        
+        .header {
+          grid-row: 1 / 2; /* Header spans first row */
+          grid-column: 1 / -1; /* Header spans all columns */
+          background-color: #14a76c;
+          opacity:0.7;
+          /* Background color for header */
+          padding: 10px; /* Padding for header */
+          border-radius: 20px;
+        }
+
+        
+        .box {
+          background-color: lightgray; /* Background color for boxes */
+          padding: 10px; /* Padding for boxes */
+          text-align: center; /* Center text in boxes */
+          border-radius: 20px;
+          
+            margin-top: 10px;
+            width: 100%;
+         
+        }
+
+        .inputHeading{
+            width:80%;border: none;background:inherit;padding:20px;font-size:2rem;
+        }
+
+        .inputVideo{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+
+        .inputDesc{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+        .inputFile{
+            width:80%;border: none;background:inherit;padding:7px;font-size:0.8rem;
+        }
+        nav {
+            /* position: fixed; */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* opacity: 0.7; */
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            box-sizing: border-box ;
+          }
+          
+          .logo-container  {
+            width: 150px;
+          }
+          .logo-container a{
+            font-size: 1.5em;
+            color: #170000;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+          }
+        
+          
+          .logo-container img {
+            max-width: 100%;
+          }
+          
+          .links-container ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          
+          .links-container li {
+            margin: 0 1rem;
+          }
+          
+          .links-container a {
+            display: inline-block;
+            position: relative;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+          }
+        
+          a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #010a0f;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+            /* margin-top: 6px; */
+          }
+           a:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+          
+          .button-container a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            /* translate: scaleX(0); */
+          }
+          
+          .button-container a:hover {
+            background-color: #ffffff;
+            color: #27272a;
+            border: 2px solid black;
+          }
+        
+          .create-login-button2 a{
+            color: #fff;
+            text-decoration: none;
+          }
+        
+           
+          @media only screen and (max-width: 768px) {
+            .logo-container {
+              width: 100px;
+            }
+          
+            .links-container {
+              display: none;
+            }
+          
+            .button-container {
+              margin-left: auto;
+            }
+          }
+          
+          @media only screen and (max-width: 480px) {
+            .logo-container {
+              width: 80px;
+            }
+          
+            .button-container a {
+              padding: 0.3rem 0.6rem;
+              font-size: 0.8rem;
+            }
+          }
+        
+
+
+          .saveButton {
+            grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+          
+
+          .flexMain{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+li {
+  /* You need to turn on relative positioning so the line is placed relative to the item rather than absolutely on the page */
+  position: relative;
+
+  /* Use padding to space things out rather than margins as the line would get broken up otherwise */
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+li .grid-container .header:before {
+  background-color: #fff;
+  width: 2px;
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -13px;
+}
+li .grid-container .header::after {
+  content: '';
+  position: absolute;
+/*   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E"); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+}
+.submitButton{
+  
+grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+  margin-left:100px;
+  width:40%;
+  background:#14a76c;
+          }
+
+.submitButton:hover{
+  background:#fff;
+  color:#14a76c;
+}
+/* body{
+    display:flex;
+    flex-wrap:wrap ;
+} */
+
+*{
+  margin: 0;
+}
+
+body{
+  background-color: #161b22;
+}
+
+
+ul{
+    list-style-type: circle;
+    /* list-style-size: 20px; */
+    
+  }
+ li::marker{
+  color: #fff;
+ }
+  
+  .grid-container {
+    background-color:#272727 ;
+    justify-content: center;
+          display: flex;
+          flex-direction: column;
+          /* grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
+          /* grid-template-columns: repeat(3, 1fr); 3 columns with equal width */
+          /* gap: 10px; Gap between grid items */
+          padding: 10px; 
+          border: 1px solid black; /* Border around grid container */
+    width:50%;
+    border-radius: 20px;
+    /* border:none; */
+  /*   font-size:50px; */
+        }
+        
+        .header {
+          grid-row: 1 / 2; /* Header spans first row */
+          grid-column: 1 / -1; /* Header spans all columns */
+          background-color: #14a76c;
+          opacity:0.7;
+          /* Background color for header */
+          padding: 10px; /* Padding for header */
+          border-radius: 20px;
+        }
+
+        
+        .box {
+          background-color: lightgray; /* Background color for boxes */
+          padding: 10px; /* Padding for boxes */
+          text-align: center; /* Center text in boxes */
+          border-radius: 20px;
+          
+            margin-top: 10px;
+            width: 100%;
+         
+        }
+
+        .inputHeading{
+            width:80%;border: none;background:inherit;padding:20px;font-size:2rem;
+        }
+
+        .inputVideo{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+
+        .inputDesc{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+        .inputFile{
+            width:80%;border: none;background:inherit;padding:7px;font-size:0.8rem;
+        }
+        nav {
+            /* position: fixed; */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* opacity: 0.7; */
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            box-sizing: border-box ;
+          }
+          
+          .logo-container  {
+            width: 150px;
+          }
+          .logo-container a{
+            font-size: 1.5em;
+            color: #170000;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+          }
+        
+          
+          .logo-container img {
+            max-width: 100%;
+          }
+          
+          .links-container ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          
+          .links-container li {
+            margin: 0 1rem;
+          }
+          
+          .links-container a {
+            display: inline-block;
+            position: relative;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+          }
+        
+          a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #010a0f;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+            /* margin-top: 6px; */
+          }
+           a:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+          
+          .button-container a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            /* translate: scaleX(0); */
+          }
+          
+          .button-container a:hover {
+            background-color: #ffffff;
+            color: #27272a;
+            border: 2px solid black;
+          }
+        
+          .create-login-button2 a{
+            color: #fff;
+            text-decoration: none;
+          }
+        
+           
+          @media only screen and (max-width: 768px) {
+            .logo-container {
+              width: 100px;
+            }
+          
+            .links-container {
+              display: none;
+            }
+          
+            .button-container {
+              margin-left: auto;
+            }
+          }
+          
+          @media only screen and (max-width: 480px) {
+            .logo-container {
+              width: 80px;
+            }
+          
+            .button-container a {
+              padding: 0.3rem 0.6rem;
+              font-size: 0.8rem;
+            }
+          }
+        
+
+
+          .saveButton {
+            grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+          
+
+          .flexMain{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+li {
+  /* You need to turn on relative positioning so the line is placed relative to the item rather than absolutely on the page */
+  position: relative;
+
+  /* Use padding to space things out rather than margins as the line would get broken up otherwise */
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+li .grid-container .header:before {
+  background-color: #fff;
+  width: 2px;
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -13px;
+}
+li .grid-container .header::after {
+  content: '';
+  position: absolute;
+/*   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E"); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+}
+.submitButton{
+  
+grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+  margin-left:100px;
+  width:40%;
+  background:#14a76c;
+          }
+
+.submitButton:hover{
+  background:#fff;
+  color:#14a76c;
+}
+/* body{
+    display:flex;
+    flex-wrap:wrap ;
+} */
+
+*{
+  margin: 0;
+}
+
+body{
+  background-color: #161b22;
+}
+
+
+ul{
+    list-style-type: circle;
+    /* list-style-size: 20px; */
+    
+  }
+ li::marker{
+  color: #fff;
+ }
+  
+  .grid-container {
+    background-color:#272727 ;
+    justify-content: center;
+          display: flex;
+          flex-direction: column;
+          /* grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
+          /* grid-template-columns: repeat(3, 1fr); 3 columns with equal width */
+          /* gap: 10px; Gap between grid items */
+          padding: 10px; 
+          border: 1px solid black; /* Border around grid container */
+    width:50%;
+    border-radius: 20px;
+    /* border:none; */
+  /*   font-size:50px; */
+        }
+        
+        .header {
+          grid-row: 1 / 2; /* Header spans first row */
+          grid-column: 1 / -1; /* Header spans all columns */
+          background-color: #14a76c;
+          opacity:0.7;
+          /* Background color for header */
+          padding: 10px; /* Padding for header */
+          border-radius: 20px;
+        }
+
+        
+        .box {
+          background-color: lightgray; /* Background color for boxes */
+          padding: 10px; /* Padding for boxes */
+          text-align: center; /* Center text in boxes */
+          border-radius: 20px;
+          
+            margin-top: 10px;
+            width: 100%;
+         
+        }
+
+        .inputHeading{
+            width:80%;border: none;background:inherit;padding:20px;font-size:2rem;
+        }
+
+        .inputVideo{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+
+        .inputDesc{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+        .inputFile{
+            width:80%;border: none;background:inherit;padding:7px;font-size:0.8rem;
+        }
+        nav {
+            /* position: fixed; */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* opacity: 0.7; */
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            box-sizing: border-box ;
+          }
+          
+          .logo-container  {
+            width: 150px;
+          }
+          .logo-container a{
+            font-size: 1.5em;
+            color: #170000;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+          }
+        
+          
+          .logo-container img {
+            max-width: 100%;
+          }
+          
+          .links-container ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          
+          .links-container li {
+            margin: 0 1rem;
+          }
+          
+          .links-container a {
+            display: inline-block;
+            position: relative;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+          }
+        
+          a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #010a0f;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+            /* margin-top: 6px; */
+          }
+           a:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+          
+          .button-container a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            /* translate: scaleX(0); */
+          }
+          
+          .button-container a:hover {
+            background-color: #ffffff;
+            color: #27272a;
+            border: 2px solid black;
+          }
+        
+          .create-login-button2 a{
+            color: #fff;
+            text-decoration: none;
+          }
+        
+           
+          @media only screen and (max-width: 768px) {
+            .logo-container {
+              width: 100px;
+            }
+          
+            .links-container {
+              display: none;
+            }
+          
+            .button-container {
+              margin-left: auto;
+            }
+          }
+          
+          @media only screen and (max-width: 480px) {
+            .logo-container {
+              width: 80px;
+            }
+          
+            .button-container a {
+              padding: 0.3rem 0.6rem;
+              font-size: 0.8rem;
+            }
+          }
+        
+
+
+          .saveButton {
+            grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+          
+
+          .flexMain{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+li {
+  /* You need to turn on relative positioning so the line is placed relative to the item rather than absolutely on the page */
+  position: relative;
+
+  /* Use padding to space things out rather than margins as the line would get broken up otherwise */
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+li .grid-container .header:before {
+  background-color: #fff;
+  width: 2px;
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -13px;
+}
+li .grid-container .header::after {
+  content: '';
+  position: absolute;
+/*   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E"); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+}
+.submitButton{
+  
+grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+  margin-left:100px;
+  width:40%;
+  background:#14a76c;
+          }
+
+.submitButton:hover{
+  background:#fff;
+  color:#14a76c;
+}
+/* body{
+    display:flex;
+    flex-wrap:wrap ;
+} */
+
+*{
+  margin: 0;
+}
+
+body{
+  background-color: #161b22;
+}
+
+
+ul{
+    list-style-type: circle;
+    /* list-style-size: 20px; */
+    
+  }
+ li::marker{
+  color: #fff;
+ }
+  
+  .grid-container {
+    background-color:#272727 ;
+    justify-content: center;
+          display: flex;
+          flex-direction: column;
+          /* grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
+          /* grid-template-columns: repeat(3, 1fr); 3 columns with equal width */
+          /* gap: 10px; Gap between grid items */
+          padding: 10px; 
+          border: 1px solid black; /* Border around grid container */
+    width:50%;
+    border-radius: 20px;
+    /* border:none; */
+  /*   font-size:50px; */
+        }
+        
+        .header {
+          grid-row: 1 / 2; /* Header spans first row */
+          grid-column: 1 / -1; /* Header spans all columns */
+          background-color: #14a76c;
+          opacity:0.7;
+          /* Background color for header */
+          padding: 10px; /* Padding for header */
+          border-radius: 20px;
+        }
+
+        
+        .box {
+          background-color: lightgray; /* Background color for boxes */
+          padding: 10px; /* Padding for boxes */
+          text-align: center; /* Center text in boxes */
+          border-radius: 20px;
+          
+            margin-top: 10px;
+            width: 100%;
+         
+        }
+
+        .inputHeading{
+            width:80%;border: none;background:inherit;padding:20px;font-size:2rem;
+        }
+
+        .inputVideo{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+
+        .inputDesc{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+        .inputFile{
+            width:80%;border: none;background:inherit;padding:7px;font-size:0.8rem;
+        }
+        nav {
+            /* position: fixed; */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* opacity: 0.7; */
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            box-sizing: border-box ;
+          }
+          
+          .logo-container  {
+            width: 150px;
+          }
+          .logo-container a{
+            font-size: 1.5em;
+            color: #170000;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+          }
+        
+          
+          .logo-container img {
+            max-width: 100%;
+          }
+          
+          .links-container ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          
+          .links-container li {
+            margin: 0 1rem;
+          }
+          
+          .links-container a {
+            display: inline-block;
+            position: relative;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+          }
+        
+          a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #010a0f;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+            /* margin-top: 6px; */
+          }
+           a:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+          
+          .button-container a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            /* translate: scaleX(0); */
+          }
+          
+          .button-container a:hover {
+            background-color: #ffffff;
+            color: #27272a;
+            border: 2px solid black;
+          }
+        
+          .create-login-button2 a{
+            color: #fff;
+            text-decoration: none;
+          }
+        
+           
+          @media only screen and (max-width: 768px) {
+            .logo-container {
+              width: 100px;
+            }
+          
+            .links-container {
+              display: none;
+            }
+          
+            .button-container {
+              margin-left: auto;
+            }
+          }
+          
+          @media only screen and (max-width: 480px) {
+            .logo-container {
+              width: 80px;
+            }
+          
+            .button-container a {
+              padding: 0.3rem 0.6rem;
+              font-size: 0.8rem;
+            }
+          }
+        
+
+
+          .saveButton {
+            grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+          
+
+          .flexMain{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+li {
+  /* You need to turn on relative positioning so the line is placed relative to the item rather than absolutely on the page */
+  position: relative;
+
+  /* Use padding to space things out rather than margins as the line would get broken up otherwise */
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+li .grid-container .header:before {
+  background-color: #fff;
+  width: 2px;
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -13px;
+}
+li .grid-container .header::after {
+  content: '';
+  position: absolute;
+/*   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E"); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+}
+.submitButton{
+  
+grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+  margin-left:100px;
+  width:40%;
+  background:#14a76c;
+          }
+
+.submitButton:hover{
+  background:#fff;
+  color:#14a76c;
+}
+/* body{
+    display:flex;
+    flex-wrap:wrap ;
+} */
+
+*{
+  margin: 0;
+}
+
+body{
+  background-color: #161b22;
+}
+
+
+ul{
+    list-style-type: circle;
+    /* list-style-size: 20px; */
+    
+  }
+ li::marker{
+  color: #fff;
+ }
+  
+  .grid-container {
+    background-color:#272727 ;
+    justify-content: center;
+          display: flex;
+          flex-direction: column;
+          /* grid-template-rows: auto 1fr 1fr 1fr; /* Header row and 3 equal-sized rows */
+          /* grid-template-columns: repeat(3, 1fr); 3 columns with equal width */
+          /* gap: 10px; Gap between grid items */
+          padding: 10px; 
+          border: 1px solid black; /* Border around grid container */
+    width:50%;
+    border-radius: 20px;
+    /* border:none; */
+  /*   font-size:50px; */
+        }
+        
+        .header {
+          grid-row: 1 / 2; /* Header spans first row */
+          grid-column: 1 / -1; /* Header spans all columns */
+          background-color: #14a76c;
+          opacity:0.7;
+          /* Background color for header */
+          padding: 10px; /* Padding for header */
+          border-radius: 20px;
+        }
+
+        
+        .box {
+          background-color: lightgray; /* Background color for boxes */
+          padding: 10px; /* Padding for boxes */
+          text-align: center; /* Center text in boxes */
+          border-radius: 20px;
+          
+            margin-top: 10px;
+            width: 100%;
+         
+        }
+
+        .inputHeading{
+            width:80%;border: none;background:inherit;padding:20px;font-size:2rem;
+        }
+
+        .inputVideo{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+
+        .inputDesc{
+            width:80%;border: none;background:inherit;padding:7px;font-size:1rem;
+        }
+        .inputFile{
+            width:80%;border: none;background:inherit;padding:7px;font-size:0.8rem;
+        }
+        nav {
+            /* position: fixed; */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            /* opacity: 0.7; */
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            box-sizing: border-box ;
+          }
+          
+          .logo-container  {
+            width: 150px;
+          }
+          .logo-container a{
+            font-size: 1.5em;
+            color: #170000;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+          }
+        
+          
+          .logo-container img {
+            max-width: 100%;
+          }
+          
+          .links-container ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+          
+          .links-container li {
+            margin: 0 1rem;
+          }
+          
+          .links-container a {
+            display: inline-block;
+            position: relative;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+          }
+        
+          a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #010a0f;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+            /* margin-top: 6px; */
+          }
+           a:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+          
+          .button-container a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            /* translate: scaleX(0); */
+          }
+          
+          .button-container a:hover {
+            background-color: #ffffff;
+            color: #27272a;
+            border: 2px solid black;
+          }
+        
+          .create-login-button2 a{
+            color: #fff;
+            text-decoration: none;
+          }
+        
+           
+          @media only screen and (max-width: 768px) {
+            .logo-container {
+              width: 100px;
+            }
+          
+            .links-container {
+              display: none;
+            }
+          
+            .button-container {
+              margin-left: auto;
+            }
+          }
+          
+          @media only screen and (max-width: 480px) {
+            .logo-container {
+              width: 80px;
+            }
+          
+            .button-container a {
+              padding: 0.3rem 0.6rem;
+              font-size: 0.8rem;
+            }
+          }
+        
+
+
+          .saveButton {
+            grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+          }
+          
+
+          .flexMain{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+li {
+  /* You need to turn on relative positioning so the line is placed relative to the item rather than absolutely on the page */
+  position: relative;
+
+  /* Use padding to space things out rather than margins as the line would get broken up otherwise */
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+li .grid-container .header:before {
+  background-color: #fff;
+  width: 2px;
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -13px;
+}
+li .grid-container .header::after {
+  content: '';
+  position: absolute;
+/*   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E"); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+}
+.submitButton{
+  
+grid-row: 3 / 4; /* save button spans the last row */
+            grid-column: 2 / 3; /* save button spans the second column */
+            justify-self: center; /* center the button horizontally */
+            padding: 10px;
+            width: 100%;
+            height: 15%;
+            margin-top: 10px;
+            width: 50%;
+            border-radius: 20px;
+            cursor: pointer;
+  margin-left:100px;
+  width:40%;
+  background:#14a76c;
+          }
+
+.submitButton:hover{
+  background:#fff;
+  color:#14a76c;
+}
