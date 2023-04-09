@@ -10,67 +10,93 @@
 </head>
 
 <body class="body">
-    <!-- <div class="continue">
-        
-            <div class="form-title">
-                <input type="text" placeholder="enter title here">
+    <div id="forms">
+  <form>
+    <ul id="form-list">
+      <li>
+        <div class="grid-container">
+          <div class="header">
+            <label for="header"><input type="text" placeholder="enter title" class="inputHeading"></label>
+          </div>
+          <div class="flexMain">
+            <div class="flex">
+              <div class="box">
+                <label for="video"><input type="\url" placeholder="enter video link" class="inputVideo"></label>
+              </div>
+              <div class="box">
+                <label for="description"><input type="text" placeholder="enter description" class="inputDesc"></label>
+              </div>
+              <div class="box">
+                <label for="file"><input type="file" placeholder="enter title" class="inputFile"></label>
+              </div>
+              <button class="saveButton" type="button" onclick="insert()">Save</button>
             </div>
-            <div class="form-content">
-                <div class="contentboxes">
-                    <input type="text" placeholder="write description about the title here">
-                </div>
-                <div class="contentboxes">
-                    <input type="url" placeholder="enter video link here">
-                </div>
-                <div class="contentboxes">
-                    <input type="url" placeholder="enter drive/notes link here">
-                </div>
-                
-            </div>
-         -->
-    <!-- </div> -->
-    <nav>
-        <div class="logo-container">
-          <a href="#"> PlanMyPath</a>
+          </div>
         </div>
-        <div class="links-container">
-          <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="create.html">CREATE ROADMAPS</a></li>
-            <!-- <li><a href="create.html">CREATE ROADMAPS</a></li> -->
-            <!-- <li><a href="#">Contact</a></li> -->
-          </ul>
-        </div>
-        <div class="button-container">
-          <a href="login.html" class="button">Sign In</a>
-        </div>
-      </nav>
-
-    <form action="">
-    <ul>
-        <li><div class="grid-container">
-              <div class="header">
-                <label for="header"><input type="text" placeholder="enter title" class="inputHeading">
-                </label>
-                
-              </div>
-              <div class="box">
-                <label for="video"><input type="\url" placeholder="enter video link" class="inputVideo">
-                </label>
-              </div>
-              <div class="box">
-                <label for="description"><input type="text" placeholder="enter description" class="inputDesc">
-                </label>
-              </div>
-              <div class="box">
-                <label for="file"><input type="file" placeholder="enter title" class="inputFile">
-                </label>
-              </div>
-              <button class="saveButton">Save</button>
-          </div></li>
-          
-          
+      </li>
     </ul>
-    </form>
+  </form>
+</div>
+
+<script>
+  function insert() {
+    // Get the form list element and clone the first list item
+    const formList = document.getElementById('form-list');
+    const firstForm = formList.querySelector('li');
+    const newForm = firstForm.cloneNode(true);
+    // Clear the input fields in the cloned form
+    const inputs = newForm.querySelectorAll('input');
+    inputs.forEach((input) => {
+      input.value = '';
+    });
+    // Append the cloned form to the form list
+    formList.appendChild(newForm);
+  }
+</script>
+<div id="forms">
+  <form>
+    <ul id="form-list">
+      <li>
+        <div class="grid-container">
+          <div class="header">
+            <label for="header"><input type="text" placeholder="enter title" class="inputHeading"></label>
+          </div>
+          <div class="flexMain">
+            <div class="flex">
+              <div class="box">
+                <label for="video"><input type="\url" placeholder="enter video link" class="inputVideo"></label>
+              </div>
+              <div class="box">
+                <label for="description"><input type="text" placeholder="enter description" class="inputDesc"></label>
+              </div>
+              <div class="box">
+                <label for="file"><input type="file" placeholder="enter title" class="inputFile"></label>
+              </div>
+              <button class="saveButton" type="button" onclick="insert()">Save</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </form>
+
+  <button type="submit" class="submitButton">Submit</button>
+</div>
+
+<script>
+  function insert() {
+    // Get the form list element and clone the first list item
+    const formList = document.getElementById('form-list');
+    const firstForm = formList.querySelector('li');
+    const newForm = firstForm.cloneNode(true);
+    // Clear the input fields in the cloned form
+    const inputs = newForm.querySelectorAll('input');
+    inputs.forEach((input) => {
+      input.value = '';
+    });
+    // Append the cloned form to the form list
+    formList.appendChild(newForm);
+  }
+</script>
 </body>
 </html>
